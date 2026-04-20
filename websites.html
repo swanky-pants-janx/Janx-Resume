@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Websites — Janco Uys</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .websites-page {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 24px;
+        }
+
+        .websites-back {
+            position: fixed;
+            top: 24px;
+            left: 24px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            transition: opacity 0.2s;
+        }
+
+        .websites-back:hover { opacity: 0.7; }
+
+        .websites-title {
+            font-family: var(--font-head);
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            color: var(--text-1);
+            text-align: center;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .websites-title span { color: var(--accent); }
+
+        .websites-subtitle {
+            color: var(--text-2);
+            font-size: 0.95rem;
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .websites-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        .website-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px 28px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+        }
+
+        .website-card:hover {
+            border-color: var(--accent);
+            background: var(--accent-dim);
+            transform: translateY(-2px);
+        }
+
+        .website-card-name {
+            font-family: var(--font-head);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-1);
+        }
+
+        .website-card-url {
+            font-size: 0.78rem;
+            color: var(--text-2);
+            margin-top: 4px;
+        }
+
+        .website-card-arrow {
+            color: var(--accent);
+            font-size: 1.1rem;
+            opacity: 0;
+            transform: translateX(-6px);
+            transition: opacity 0.2s, transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .website-card:hover .website-card-arrow {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="websites-back">← Back</a>
+
+    <div class="websites-page">
+        <p class="section-label" style="text-align:center; margin-bottom: 12px;">Portfolio</p>
+        <h1 class="websites-title">Websites I've <span>Built</span></h1>
+        <p class="websites-subtitle">A selection of client websites built using WordPress and Wix.</p>
+
+        <div class="websites-grid">
+            <a href="https://www.shepstonespa.co.za/" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Shepstone Spa</div>
+                    <div class="website-card-url" style="display:none">shepstonespa.co.za</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+            <a href="https://www.knee.capetown/" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Knee Cape Town</div>
+                    <div class="website-card-url" style="display:none">knee.capetown</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+            <a href="https://tapxdev.wixstudio.com/stride" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Stride</div>
+                    <div class="website-card-url" style="display:none">tapxdev.wixstudio.com/stride</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+            <a href="https://www.carfox.co.za/" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Carfox</div>
+                    <div class="website-card-url" style="display:none">carfox.co.za</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+            <a href="https://www.jo-annstrauss.com/" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Jo-Ann Strauss</div>
+                    <div class="website-card-url" style="display:none">jo-annstrauss.com</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+            <a href="https://www.masekhaya.co.za/" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Masekhaya</div>
+                    <div class="website-card-url" style="display:none">masekhaya.co.za</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+            <a href="https://picamarket.site" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Pica Market</div>
+                    <div class="website-card-url" style="display:none">picamarket.site</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+            <a href="https://swanky-pants-janx.github.io/Text-Based-Game-v2/" target="_blank" rel="noopener" class="website-card">
+                <div>
+                    <div class="website-card-name">Text-Based Game</div>
+                    <div class="website-card-url" style="display:none">swanky-pants-janx.github.io/Text-Based-Game-v2</div>
+                </div>
+                <div class="website-card-arrow">→</div>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
