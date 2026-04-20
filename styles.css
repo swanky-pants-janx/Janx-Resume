@@ -1126,6 +1126,102 @@ footer {
 }
 
 
+/* ---- SIDEBAR NAV ---- */
+.sidenav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 180px;
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px 0 32px 28px;
+    gap: 0;
+    pointer-events: none;
+    background: linear-gradient(to right, rgba(22,22,24,0.92) 70%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.sidenav-logo {
+    font-family: var(--font-head);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    width: 38px; height: 38px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    pointer-events: all;
+    transition: background var(--transition);
+    flex-shrink: 0;
+}
+.sidenav-logo:hover { background: var(--accent-dim); }
+
+.sidenav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sidenav-link {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-2);
+    letter-spacing: 0.4px;
+    padding: 6px 12px 6px 0;
+    position: relative;
+    pointer-events: all;
+    transition: color var(--transition);
+    white-space: nowrap;
+}
+
+.sidenav-link::before {
+    content: '';
+    position: absolute;
+    left: -28px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 3px;
+    height: 0;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: height var(--transition);
+}
+
+.sidenav-link:hover { color: var(--text-1); }
+
+.sidenav-link.active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.sidenav-link.active::before {
+    height: 20px;
+}
+
+.sidenav {
+    transform: translateX(0);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.sidenav.sidenav-hidden {
+    transform: translateX(-100%);
+    pointer-events: none;
+}
+
+@media (min-width: 1100px) {
+    .sidenav { display: flex; }
+    .navbar { display: none; }
+}
+
+@media (max-width: 1099px) {
+    .sidenav { display: none; }
+}
+
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
     .about-grid { grid-template-columns: 1fr; gap: 48px; }

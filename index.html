@@ -39,6 +39,20 @@
         </div>
     </header>
 
+    <!-- SIDEBAR NAV -->
+    <nav class="sidenav" id="sidenav">
+        <a href="#hero" class="sidenav-logo">JU</a>
+        <div class="sidenav-links">
+            <a href="#skills"      class="sidenav-link" data-section="skills">Skills</a>
+            <a href="#about"       class="sidenav-link" data-section="about">About</a>
+            <a href="#experience"  class="sidenav-link" data-section="experience">Experience</a>
+            <a href="#education"   class="sidenav-link" data-section="education">Education</a>
+            <a href="#work-links"  class="sidenav-link" data-section="work-links">Portfolio</a>
+            <a href="#picamarket"  class="sidenav-link" data-section="picamarket">Personal Projects</a>
+            <a href="#contact"     class="sidenav-link" data-section="contact">Contact</a>
+        </div>
+    </nav>
+
     <main>
 
         <!-- HERO -->
@@ -71,7 +85,6 @@
                 <span>Photo Editing</span><span class="dot">✦</span>
                 <span>Copywriting</span><span class="dot">✦</span>
                 <span>Social Media</span><span class="dot">✦</span>
-                <span>Brand Strategy</span><span class="dot">✦</span>
                 <span>Audio Production</span><span class="dot">✦</span>
                 <span>Figma</span><span class="dot">✦</span>
                 <!-- duplicate for seamless loop -->
@@ -82,7 +95,6 @@
                 <span>Photo Editing</span><span class="dot">✦</span>
                 <span>Copywriting</span><span class="dot">✦</span>
                 <span>Social Media</span><span class="dot">✦</span>
-                <span>Brand Strategy</span><span class="dot">✦</span>
                 <span>Audio Production</span><span class="dot">✦</span>
                 <span>Figma</span><span class="dot">✦</span>
             </div>
@@ -120,7 +132,6 @@
                             <li>SEO Strategy</li>
                             <li>Copywriting</li>
                             <li>Social Media Management</li>
-                            <li>Brand Strategy</li>
                         </ul>
                     </div>
                     <div class="skill-card reveal">
@@ -169,7 +180,7 @@
                         <div class="section-label">About Me</div>
                         <h2 class="section-title">Who Is<br><span class="accent">Janco?</span></h2>
                         <p class="about-text">
-                            Creative and detail-oriented Digital Specialist with experience in web design, content creation, and brand strategy. Proficient in WordPress, Wix,
+                            Creative and detail-oriented Digital Specialist with experience in web design, content creation, and digital marketing. Proficient in WordPress, Wix,
                             Figma, SEO, and multimedia editing tools including Adobe Premiere Pro and Photoshop.
                         </p>
                         <p class="about-text">
@@ -246,7 +257,7 @@
                                 <li>Coordinating corporate and student events</li>
                                 <li>Creating banners and adverts for website and social media</li>
                                 <li>Budgeting for events, recording purchase orders</li>
-                                <li>Brand strategy development for marketing campaigns</li>
+                                <li>Development and execution of marketing campaigns</li>
                             </ul>
                         </div>
                     </div>
@@ -554,6 +565,29 @@
     </footer>
 
     <script>
+        // Sidebar active section tracking
+        const sidenav = document.getElementById('sidenav');
+        const sidenavLinks = document.querySelectorAll('.sidenav-link');
+        const sections = document.querySelectorAll('section[id], footer[id]');
+
+        const heroEl = document.getElementById('hero');
+        const heroVisibility = new IntersectionObserver((entries) => {
+            sidenav.classList.toggle('sidenav-hidden', entries[0].isIntersecting);
+        }, { threshold: 0.1 });
+        heroVisibility.observe(heroEl);
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    sidenavLinks.forEach(link => {
+                        link.classList.toggle('active', link.dataset.section === entry.target.id);
+                    });
+                }
+            });
+        }, { threshold: 0.25 });
+
+        sections.forEach(s => observer.observe(s));
+
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
@@ -579,7 +613,6 @@
             'Web Developer.',
             'Web Designer.',
             'Content Creator.',
-            'Brand Strategist.',
             'Quality Focused.',
             'Digital Specialist.'
         ];
@@ -614,15 +647,15 @@
 
         // Scroll reveal
         const revealEls = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
+        const revealObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
+                    revealObserver.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.12 });
-        revealEls.forEach(el => observer.observe(el));
+        revealEls.forEach(el => revealObserver.observe(el));
 
         // Video card dropdown toggle
         const videoCard = document.querySelector('.portfolio-card-videos');
