@@ -414,6 +414,16 @@ img { display: block; max-width: 100%; }
     margin-bottom: 16px;
 }
 
+.skill-icon img,
+.portfolio-icon img,
+.achievement-icon img {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    filter: brightness(0) saturate(100%) invert(74%) sepia(33%) saturate(500%) hue-rotate(5deg) brightness(95%);
+}
+
 .skill-card h3 {
     font-family: var(--font-head);
     font-size: 1.05rem;
