@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Websites — Janco Uys</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,8 +14,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            padding: 80px 24px;
+            padding: 120px 24px 80px;
         }
 
         .websites-back {
@@ -56,41 +56,60 @@
         .websites-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            gap: 24px;
             width: 100%;
-            max-width: 900px;
+            max-width: 960px;
         }
 
         .website-card {
             background: var(--surface);
             border: 1px solid var(--border);
             border-radius: 14px;
-            padding: 24px 28px;
+            overflow: hidden;
             text-decoration: none;
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            transition: border-color 0.2s, background 0.2s, transform 0.2s;
+            flex-direction: column;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
         }
 
         .website-card:hover {
             border-color: var(--accent);
-            background: var(--accent-dim);
-            transform: translateY(-2px);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+        }
+
+        .website-card-preview {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: var(--bg);
+        }
+
+        .website-card-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .website-card:hover .website-card-preview img {
+            transform: scale(1.04);
+        }
+
+        .website-card-body {
+            padding: 16px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .website-card-name {
             font-family: var(--font-head);
-            font-size: 1rem;
+            font-size: 0.95rem;
             font-weight: 600;
             color: var(--text-1);
-        }
-
-        .website-card-url {
-            font-size: 0.78rem;
-            color: var(--text-2);
-            margin-top: 4px;
         }
 
         .website-card-arrow {
@@ -118,60 +137,58 @@
 
         <div class="websites-grid">
             <a href="https://www.shepstonespa.co.za/" target="_blank" rel="noopener" class="website-card">
-                <div>
-                    <div class="website-card-name">Shepstone Spa</div>
-                    <div class="website-card-url" style="display:none">shepstonespa.co.za</div>
+                <div class="website-card-preview">
+                    <img src="Screenshots/Shepstone Spa.png" alt="Shepstone Spa">
                 </div>
-                <div class="website-card-arrow">→</div>
+                <div class="website-card-body">
+                    <div class="website-card-name">Shepstone Spa</div>
+                    <div class="website-card-arrow">→</div>
+                </div>
             </a>
             <a href="https://www.knee.capetown/" target="_blank" rel="noopener" class="website-card">
-                <div>
-                    <div class="website-card-name">Knee Cape Town</div>
-                    <div class="website-card-url" style="display:none">knee.capetown</div>
+                <div class="website-card-preview">
+                    <img src="Screenshots/Knee.png" alt="Knee Cape Town">
                 </div>
-                <div class="website-card-arrow">→</div>
+                <div class="website-card-body">
+                    <div class="website-card-name">Knee Cape Town</div>
+                    <div class="website-card-arrow">→</div>
+                </div>
             </a>
             <a href="https://tapxdev.wixstudio.com/stride" target="_blank" rel="noopener" class="website-card">
-                <div>
-                    <div class="website-card-name">Stride</div>
-                    <div class="website-card-url" style="display:none">tapxdev.wixstudio.com/stride</div>
+                <div class="website-card-preview">
+                    <img src="Screenshots/Stride.png" alt="Stride">
                 </div>
-                <div class="website-card-arrow">→</div>
+                <div class="website-card-body">
+                    <div class="website-card-name">Stride</div>
+                    <div class="website-card-arrow">→</div>
+                </div>
             </a>
             <a href="https://www.carfox.co.za/" target="_blank" rel="noopener" class="website-card">
-                <div>
-                    <div class="website-card-name">Carfox</div>
-                    <div class="website-card-url" style="display:none">carfox.co.za</div>
+                <div class="website-card-preview">
+                    <img src="Screenshots/Carfox.png" alt="Carfox">
                 </div>
-                <div class="website-card-arrow">→</div>
+                <div class="website-card-body">
+                    <div class="website-card-name">Carfox</div>
+                    <div class="website-card-arrow">→</div>
+                </div>
             </a>
             <a href="https://www.jo-annstrauss.com/" target="_blank" rel="noopener" class="website-card">
-                <div>
-                    <div class="website-card-name">Jo-Ann Strauss</div>
-                    <div class="website-card-url" style="display:none">jo-annstrauss.com</div>
+                <div class="website-card-preview">
+                    <img src="Screenshots/Jo-Ann.png" alt="Jo-Ann Strauss">
                 </div>
-                <div class="website-card-arrow">→</div>
+                <div class="website-card-body">
+                    <div class="website-card-name">Jo-Ann Strauss</div>
+                    <div class="website-card-arrow">→</div>
+                </div>
             </a>
             <a href="https://www.masekhaya.co.za/" target="_blank" rel="noopener" class="website-card">
-                <div>
+                <div class="website-card-preview">
+                    <img src="Screenshots/Masekaya.png" alt="Masekhaya">
+                </div>
+                <div class="website-card-body">
                     <div class="website-card-name">Masekhaya</div>
-                    <div class="website-card-url" style="display:none">masekhaya.co.za</div>
+                    <div class="website-card-arrow">→</div>
                 </div>
-                <div class="website-card-arrow">→</div>
-            </a>
-            <a href="https://picamarket.site" target="_blank" rel="noopener" class="website-card">
-                <div>
-                    <div class="website-card-name">Pica Market</div>
-                    <div class="website-card-url" style="display:none">picamarket.site</div>
-                </div>
-                <div class="website-card-arrow">→</div>
-            </a>
-            <a href="https://swanky-pants-janx.github.io/Text-Based-Game-v2/" target="_blank" rel="noopener" class="website-card">
-                <div>
-                    <div class="website-card-name">Text-Based Game</div>
-                    <div class="website-card-url" style="display:none">swanky-pants-janx.github.io/Text-Based-Game-v2</div>
-                </div>
-                <div class="website-card-arrow">→</div>
             </a>
         </div>
     </div>
