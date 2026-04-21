@@ -1068,6 +1068,22 @@ footer {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: -12px -16px;
+    transition: border-color 0.3s;
+}
+
+@keyframes contact-pulse {
+    0%   { border-color: transparent; box-shadow: none; }
+    20%  { border-color: var(--accent); box-shadow: 0 0 16px rgba(200,169,110,0.35); }
+    70%  { border-color: var(--accent); box-shadow: 0 0 16px rgba(200,169,110,0.35); }
+    100% { border-color: transparent; box-shadow: none; }
+}
+
+.footer-contact-list.contact-highlight {
+    animation: contact-pulse 2.4s ease forwards;
 }
 
 .footer-contact-list a,
