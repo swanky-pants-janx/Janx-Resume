@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --print-to-pdf=\"Janco_Uys_CV.pdf\" --print-to-pdf-no-header --no-margins \"file://$\\(pwd\\)/resume-print.html\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --headless --disable-gpu --print-to-pdf=\"Janco_Uys_CV.pdf\" --print-to-pdf-no-header --no-margins --run-all-compositor-stages-before-draw --virtual-time-budget=5000 \"file:///Users/jancouys/Documents/GitHub/Janx-Resume/resume-print.html\")",
+      "Bash(git checkout *)",
+      "Bash(git pull *)",
+      "Bash(git stash *)"
+    ]
+  }
+}
