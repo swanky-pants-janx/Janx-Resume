@@ -3,214 +3,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Janco Uys — Digital Specialist</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="newcss.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- NAV -->
-    <header class="navbar" id="navbar">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo">JU</a>
-            <nav class="nav-links">
-                <a href="#skills">Skills</a>
-                <a href="#about">About</a>
-                <a href="#experience">Experience</a>
-                <a href="#education">Education</a>
-                <a href="#work-links">Portfolio</a>
-                <a href="#picamarket">Personal Projects</a>
-                <a href="#contact" class="nav-cta">Contact</a>
-            </nav>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <a href="#skills" class="mobile-link">Skills</a>
-            <a href="#about" class="mobile-link">About</a>
-            <a href="#experience" class="mobile-link">Experience</a>
-            <a href="#education" class="mobile-link">Education</a>
-            <a href="#work-links" class="mobile-link">Portfolio</a>
-            <a href="#picamarket" class="mobile-link">Personal Projects</a>
-            <a href="#contact" class="mobile-link">Contact</a>
-        </div>
-    </header>
+    <!-- SVG gooey filter -->
+    <svg style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+        <defs>
+            <filter id="goo">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"/>
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 20 -8" result="goo"/>
+                <feComposite in="SourceGraphic" in2="goo" operator="atop"/>
+            </filter>
+        </defs>
+    </svg>
 
-    <!-- SIDEBAR NAV -->
-    <nav class="sidenav" id="sidenav">
-        <a href="#hero" class="sidenav-logo">JU</a>
-        <div class="sidenav-links">
-            <a href="#skills"      class="sidenav-link" data-section="skills">Skills</a>
-            <a href="#about"       class="sidenav-link" data-section="about">About</a>
-            <a href="#experience"  class="sidenav-link" data-section="experience">Experience</a>
-            <a href="#education"   class="sidenav-link" data-section="education">Education</a>
-            <a href="#work-links"  class="sidenav-link" data-section="work-links">Portfolio</a>
-            <a href="#picamarket"  class="sidenav-link" data-section="picamarket">Personal Projects</a>
-            <a href="#contact"     class="sidenav-link" data-section="contact">Contact</a>
-        </div>
-    </nav>
-
-    <main>
+<main>
 
         <!-- HERO -->
-        <section class="hero" id="hero">
-            <div class="hero-bg-grid"></div>
-            <div class="hero-content">
-                <p class="hero-eyebrow">Digital Specialist · Pretoria, SA</p>
-                <h1 class="hero-name">Janco<br><span class="hero-name-accent">Uys</span></h1>
-                <p class="hero-tagline">
-                    <span class="typewriter" id="typewriter"></span><span class="cursor">|</span>
-                </p>
-                <div class="hero-cta-group">
-                    <a href="#work-links" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+        <section class="hero-section">
+            <div class="hero-section-left">
+                <div class="hero-text">
+                    <p class="hero-eyebrow">Hi, I'm</p>
+                    <h1>JANCO UYS</h1>
+                    <p class="hero-subtitle">Web Design &amp; Developer</p>
+                    <p class="hero-desc">I design, build and manage websites. Check out my portfolio!</p>
+                    <div class="hero-actions">
+                        <a href="#websites" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-outline">Hire Me</a>
+                    </div>
                 </div>
             </div>
-            <div class="hero-scroll-hint">
-                <span>Scroll</span>
-                <div class="scroll-line"></div>
-            </div>
-        </section>
-
-        <!-- TICKER -->
-        <div class="ticker-wrap">
-            <div class="ticker-track">
-                <span>Web Development</span><span class="dot">✦</span>
-                <span>Web Design</span><span class="dot">✦</span>
-                <span>SEO</span><span class="dot">✦</span>
-                <span>Video Editing</span><span class="dot">✦</span>
-                <span>Photo Editing</span><span class="dot">✦</span>
-                <span>Copywriting</span><span class="dot">✦</span>
-                <span>Social Media</span><span class="dot">✦</span>
-                <span>Audio Production</span><span class="dot">✦</span>
-                <span>Figma</span><span class="dot">✦</span>
-                <!-- duplicate for seamless loop -->
-                <span>Web Development</span><span class="dot">✦</span>
-                <span>Web Design</span><span class="dot">✦</span>
-                <span>SEO</span><span class="dot">✦</span>
-                <span>Video Editing</span><span class="dot">✦</span>
-                <span>Photo Editing</span><span class="dot">✦</span>
-                <span>Copywriting</span><span class="dot">✦</span>
-                <span>Social Media</span><span class="dot">✦</span>
-                <span>Audio Production</span><span class="dot">✦</span>
-                <span>Figma</span><span class="dot">✦</span>
-            </div>
-        </div>
-
-        <!-- SKILLS -->
-        <section class="section" id="skills">
-            <div class="container">
-                <div class="section-label reveal">Skills</div>
-                <h2 class="section-title reveal">What I Bring<br><span class="accent">To The Table</span></h2>
-                <div class="skills-grid">
-                    <div class="skill-card reveal">
-                        <div class="skill-icon"><img src="Icons/Web.svg" alt="Web Development"></div>
-                        <h3>Web Designer &amp; Manager</h3>
-                        <ul>
-                            <li>WordPress: Elementor &amp; Divi</li>
-                            <li>Managing 40+ Wix Websites</li>
-                            <li>HTML &amp; CSS</li>
-                            <li>JavaScript</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon"><img src="Icons/design.svg" alt="Design"></div>
-                        <h3>Design</h3>
-                        <ul>
-                            <li>Figma (UI/UX &amp; Mockups)</li>
-                            <li>Adobe Photoshop</li>
-                            <li>Canva</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon"><img src="Icons/marketing.svg" alt="Marketing & Content"></div>
-                        <h3>Marketing &amp; Content</h3>
-                        <ul>
-                            <li>SEO Strategy</li>
-                            <li>Copywriting</li>
-                            <li>Social Media Management</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon"><img src="Icons/media.svg" alt="Media Production"></div>
-                        <h3>Media Production</h3>
-                        <ul>
-                            <li>Adobe Premiere Pro</li>
-                            <li>Da Vinci Resolve</li>
-                            <li>Ableton Live &amp; FL Studio</li>
-                            <li>Logic Pro</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon"><img src="Icons/management.svg" alt="Management"></div>
-                        <h3>Management</h3>
-                        <ul>
-                            <li>Project Management</li>
-                            <li>Client Relations &amp; Accounts</li>
-                            <li>Events Coordination</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card reveal">
-                        <div class="skill-icon"><img src="Icons/tools.svg" alt="Tools"></div>
-                        <h3>Tools</h3>
-                        <ul>
-                            <li>Microsoft Word / Excel / PowerPoint</li>
-                            <li>English &amp; Afrikaans</li>
-                            <li>Valid Driver's Licence</li>
-                        </ul>
+            <div class="hero-section-right">
+                <div class="hero-blobs" aria-hidden="true">
+                    <div class="hero-blob hero-blob-1"></div>
+                    <div class="hero-blob hero-blob-2"></div>
+                    <div class="hero-blob hero-blob-3"></div>
+                </div>
+                <div class="hero-image-wrap">
+                    <img src="IMG_2696.jpg" class="hero-image" alt="Janco Uys">
+                    <div class="hero-badge">
+                        <span class="hero-badge-dot"></span>
+                        Available for work
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- ABOUT -->
-        <section class="section section-dark" id="about">
-            <div class="container">
-                <div class="about-grid">
-                    <div class="about-image-wrap reveal">
-                        <div class="about-image-frame">
-                            <img src="IMG_2696.jpg" alt="Janco Uys">
+        <!-- PAGE GRID -->
+        <div class="page-grid">
+
+            <!-- LEFT: sticky sidebar nav -->
+            <aside class="page-sidebar">
+                <div class="bottom-menu-container">
+                    <a href="#websites" class="active">Websites</a>
+                    <a href="#skills">My Skills</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#education">Education</a>
+                    <a href="#contact">Contact Me</a>
+                </div>
+            </aside>
+
+            <!-- RIGHT: all content -->
+            <div class="page-content">
+
+            <!-- ── WEBSITES ─────────────────────────────────────────── -->
+            <section class="page-section reveal" id="websites">
+                <div class="tab-header">
+                    <h2>Websites I've Built </h2>
+                </div>
+                <div class="carousel-3d-wrapper">
+                    <button class="carousel-nav carousel-prev" aria-label="Previous">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    </button>
+
+                    <div class="carousel-3d-stage">
+                        <div class="carousel-3d-track">
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://swanky-pants-janx.github.io/Shepstone-Rebuild/" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Shepstone Spa.png" alt="Shepstone Spa">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Shepstone Spa</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://www.carfox.co.za/" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Carfox.png" alt="Carfox">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Carfox</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://hare-curated-website-build.vercel.app" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Hare Curated.png" alt="Hare Curated">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Hare Curated</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://www.jo-annstrauss.com/" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Jo-Ann.png" alt="Jo-Ann Strauss">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Jo-Ann Strauss</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://www.knee.capetown/" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Knee.png" alt="Knee Cape Town">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Knee Cape Town</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://www.masekhaya.co.za/" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Masekaya.png" alt="Masekhaya">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Masekhaya</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://tapxdev.wixstudio.com/salgados" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Salgados Website.png" alt="Salgados">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Salgados</h3>
+                                    </div>
+                                </a>
+                            </div>
+
+                            <div class="carousel-slide">
+                                <a class="carousel-card" href="https://strideortho.co.za/" target="_blank" rel="noopener">
+                                    <div class="carousel-img-wrap">
+                                        <img src="Screenshots/Stride.png" alt="Stride">
+                                    </div>
+                                    <div class="carousel-info">
+                                        <h3>Stride</h3>
+                                    </div>
+                                </a>
+                            </div>
+
                         </div>
                     </div>
-                    <div class="about-content reveal">
-                        <div class="section-label">About Me</div>
-                        <h2 class="section-title">Who Is<br><span class="accent">Janco?</span></h2>
-                        <p class="about-text">
-                            Creative and detail-oriented Digital Specialist with experience in web design, content creation, and digital marketing. Proficient in WordPress, Wix,
-                            Figma, SEO, and multimedia editing tools including Adobe Premiere Pro and Photoshop.
-                        </p>
-                        <p class="about-text">
-                            Strong background in marketing, copywriting, and project coordination, with proven
-                            experience managing client accounts and delivering strategic digital solutions.
-                            Academic foundation in Visual Communication supports a refined eye for design,
-                            storytelling, and audience engagement.
-                        </p>
-                        <p class="about-text">
-                            <em>"Quality is built into everything I deliver. From day one I review my own work thoroughly before it goes out, and follow up with clients after delivery to make sure everything meets the mark."</em>
-                        </p>
+
+                    <button class="carousel-nav carousel-next" aria-label="Next">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                    </button>
+                </div>
+
+                <div class="carousel-dots"></div>
+
+                <div class="hire-cta-banner">
+                    <div class="hire-cta-text">
+                        <span class="hire-cta-eyebrow">Like what you see?</span>
+                        <h3 class="hire-cta-heading">Need a website? I'll build you one.</h3>
+                    </div>
+                    <a href="#contact" class="btn btn-primary hire-cta-btn">Let's Talk</a>
+                </div>
+
+            </section>
+
+            <!-- ── SKILLS ───────────────────────────────────────────── -->
+            <section class="page-section reveal" id="skills">
+                <div class="tab-header">
+                    <h2>My Skills</h2>
+                </div>
+
+                <div class="skill-icons-row">
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/html5-02-svgrepo-com.svg" alt="HTML5">
+                        <span>HTML</span>
+                    </div>
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/css3-02-svgrepo-com.svg" alt="CSS3">
+                        <span>CSS</span>
+                    </div>
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/javascript-155-svgrepo-com.svg" alt="JavaScript">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/figma-svgrepo-com.svg" alt="Figma">
+                        <span>Figma</span>
+                    </div>
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/wix-svgrepo-com.svg" alt="Wix">
+                        <span>Wix</span>
+                    </div>
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/wordpress-139-svgrepo-com.svg" alt="WordPress">
+                        <span>WordPress</span>
+                    </div>
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/canva-svgrepo-com.svg" alt="Canva">
+                        <span>Canva</span>
+                    </div>
+                    <div class="skill-icon-badge">
+                        <img src="Icons 2/domains-svgrepo-com.svg" alt="Canva">
+                        <span>Domains Management</span>
                     </div>
                 </div>
-            </div>
-        </section>
+                
 
-        <!-- EXPERIENCE -->
-        <section class="section" id="experience">
-            <div class="container">
-                <div class="section-label reveal">Experience</div>
-                <h2 class="section-title reveal">Work<br><span class="accent">History</span></h2>
+            </section>
+
+            <!-- ── EXPERIENCE ───────────────────────────────────────── -->
+            <section class="page-section reveal" id="experience">
+                <div class="tab-header">
+                    <h2>Work Experience</h2>
+                </div>
                 <div class="timeline">
 
-                    <div class="timeline-item reveal">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">May 2025 – Present</span>
-
-                        </div>
+                    <div class="timeline-item">
                         <div class="timeline-card">
-                            <h3 class="timeline-role">Website Developer &amp; Accounts Manager</h3>
-                            <p class="timeline-company">Tap-X / Our-Venue</p>
+                            <div class="timeline-card-left">
+                                <span class="timeline-date">May 2025 – Present</span>
+                                <h3>Website Developer &amp; Accounts Manager</h3>
+                                <p class="timeline-company">Tap-X / Our-Venue</p>
+                            </div>
                             <ul class="timeline-list">
                                 <li>Building websites for clients in Wix and WordPress</li>
                                 <li>Using Figma to design and prototype mock-sites</li>
@@ -221,13 +260,13 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item reveal">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">Ongoing</span>
-                        </div>
+                    <div class="timeline-item">
                         <div class="timeline-card">
-                            <h3 class="timeline-role">Freelancer</h3>
-                            <p class="timeline-company">Self-Employed</p>
+                            <div class="timeline-card-left">
+                                <span class="timeline-date">Ongoing</span>
+                                <h3>Freelancer</h3>
+                                <p class="timeline-company">Self-Employed</p>
+                            </div>
                             <ul class="timeline-list">
                                 <li>Freelance web development for clients</li>
                                 <li>Freelance video editing for multiple clients</li>
@@ -237,13 +276,13 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item reveal">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">Jan – May 2025</span>
-                        </div>
+                    <div class="timeline-item">
                         <div class="timeline-card">
-                            <h3 class="timeline-role">Marketing and Branding Intern</h3>
-                            <p class="timeline-company">University of Pretoria (UP)</p>
+                            <div class="timeline-card-left">
+                                <span class="timeline-date">Jan – May 2025</span>
+                                <h3>Marketing and Branding Intern</h3>
+                                <p class="timeline-company">University of Pretoria (UP)</p>
+                            </div>
                             <ul class="timeline-list">
                                 <li>Website copywriting and SEO integration for UP website</li>
                                 <li>Writing articles and media content</li>
@@ -256,13 +295,13 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item reveal">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">2023</span>
-                        </div>
+                    <div class="timeline-item">
                         <div class="timeline-card">
-                            <h3 class="timeline-role">Art Gallery Intern</h3>
-                            <p class="timeline-company">University of Pretoria (UP)</p>
+                            <div class="timeline-card-left">
+                                <span class="timeline-date">2023</span>
+                                <h3>Art Gallery Intern</h3>
+                                <p class="timeline-company">University of Pretoria (UP)</p>
+                            </div>
                             <ul class="timeline-list">
                                 <li>Created and managed UP art gallery Instagram page</li>
                                 <li>Wrote copy for social media pages</li>
@@ -274,13 +313,13 @@
                         </div>
                     </div>
 
-                    <div class="timeline-item reveal">
-                        <div class="timeline-meta">
-                            <span class="timeline-date">2018</span>
-                        </div>
+                    <div class="timeline-item">
                         <div class="timeline-card">
-                            <h3 class="timeline-role">Food Server</h3>
-                            <p class="timeline-company">Rocomamas</p>
+                            <div class="timeline-card-left">
+                                <span class="timeline-date">2018</span>
+                                <h3>Waiter</h3>
+                                <p class="timeline-company">Rocomamas</p>
+                            </div>
                             <ul class="timeline-list">
                                 <li>Customer service — serving and communicating with customers</li>
                                 <li>Food sales and promotion of new products</li>
@@ -289,449 +328,305 @@
                     </div>
 
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- EDUCATION & ACHIEVEMENTS -->
-        <section class="section section-dark" id="education">
-            <div class="container">
-                <div class="edu-grid">
-                    <div class="edu-column reveal">
-                        <div class="section-label">Education</div>
-                        <h2 class="section-title">Academic<br><span class="accent">Background</span></h2>
-                        <div class="edu-list">
-                            <div class="edu-item">
-                                <span class="edu-year">2024</span>
-                                <div>
-                                    <h4>BA Honours — Visual Studies</h4>
-                                    <p>University of Pretoria</p>
-                                </div>
+            <!-- ── EDUCATION ─────────────────────────────────────────── -->
+            <section class="page-section reveal" id="education">
+                <div class="tab-header">
+                    <h2>Education</h2>
+                    <p class="tab-sub">Academic background and notable achievements.</p>
+                </div>
+                <div class="edu-cards-grid">
+
+                    <div class="edu-card">
+                        <div class="edu-card-year">2024</div>
+                        <h3 class="edu-card-degree">BA Honours</h3>
+                        <p class="edu-card-field">Visual Studies</p>
+                        <p class="edu-card-institution">University of Pretoria</p>
+                        <div class="edu-card-icons">
+                            <img src="icons 2/graduation-cap-svgrepo-com.svg" class="edu-icon" alt="graduation cap">
+                            <img src="icons 2/ribbon-svgrepo-com.svg" class="edu-icon" alt="ribbon">
+                            <img src="icons 2/ribbon-svgrepo-com.svg" class="edu-icon" alt="ribbon">
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-card-year">2019 – 2022</div>
+                        <h3 class="edu-card-degree">BA</h3>
+                        <p class="edu-card-field">Visual Studies &amp; Anthropology</p>
+                        <p class="edu-card-institution">University of Pretoria</p>
+                        <div class="edu-card-icons">
+                            <img src="icons 2/graduation-cap-svgrepo-com.svg" class="edu-icon" alt="graduation cap">
+                            <img src="icons 2/ribbon-svgrepo-com.svg" class="edu-icon" alt="ribbon">
+                        </div>
+                    </div>
+
+                    <div class="edu-card">
+                        <div class="edu-card-year">2013 – 2017</div>
+                        <h3 class="edu-card-degree">NSC</h3>
+                        <p class="edu-card-field">National Senior Certificate</p>
+                        <p class="edu-card-institution">Hoërskool Waterkloof</p>
+                        <div class="edu-card-icons">
+                            <img src="icons 2/graduation-cap-svgrepo-com.svg" class="edu-icon" alt="graduation cap">
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ── CONTACT ──────────────────────────────────────────── -->
+            <section class="page-section reveal" id="contact">
+                <div class="tab-header">
+                    <h2>Get In Touch</h2>
+                </div>
+                <div class="contact-layout">
+
+                    <div class="contact-info">
+                        <div class="contact-block">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:jancouyscareer@gmail.com" class="contact-value">jancouyscareer@gmail.com</a>
+                        </div>
+                        <div class="contact-block">
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+27769060900" class="contact-value">+(27) 76 906 0900</a>
+                        </div>
+                        <div class="contact-block">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">Pretoria, South Africa</span>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="https://github.com/swanky-pants-janx" target="_blank" class="social-link">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+                                GitHub
+                            </a>
+                        </div>
+
+                        <div class="references-block">
+                            <h4 class="references-title">References</h4>
+                            <div class="ref-item">
+                                <strong>Prof Jenni Lauwrens</strong>
+                                <span>University of Pretoria</span>
+                                <a href="mailto:jenni.lauwrens@up.ac.za">jenni.lauwrens@up.ac.za</a>
                             </div>
-                            <div class="edu-item">
-                                <span class="edu-year">2019–22</span>
-                                <div>
-                                    <h4>BA — Visual Studies &amp; Anthropology</h4>
-                                    <p>University of Pretoria</p>
-                                </div>
-                            </div>
-                            <div class="edu-item">
-                                <span class="edu-year">2013–17</span>
-                                <div>
-                                    <h4>NSC</h4>
-                                    <p>Hoërskool Waterkloof</p>
-                                </div>
+                            <div class="ref-item">
+                                <strong>Gabrielle Onay</strong>
+                                <span>Picnic &amp; Thrift</span>
+                                <a href="tel:+27714693897">+27 71 469 3897</a>
                             </div>
                         </div>
                     </div>
-                    <div class="achievements-column reveal">
-                        <div class="section-label">Achievements</div>
-                        <h2 class="section-title">Notable<br><span class="accent">Highlights</span></h2>
-                        <div class="achievement-card">
-                            <div class="achievement-icon"><img src="Icons/writing.svg" alt="Published Work"></div>
-                            <div>
-                                <h4>Published Academic Work</h4>
-                                <p>Peer-reviewed book review published in an academic journal on Sabinet</p>
-                                <a href="https://journals.co.za/doi/epdf/10.10520/ejc-proc_epharos1-v2024-n1-a4" target="_blank" rel="noopener" class="achievement-link">Read publication →</a>
+
+                    <form class="contact-form" action="https://formspree.io/f/xaqvzvdg" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cf-name">Name</label>
+                                <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cf-email">Email</label>
+                                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
                             </div>
                         </div>
-                        <div class="achievement-card">
-                            <div class="achievement-icon"><img src="Icons/marketing.svg" alt="International Conference"></div>
-                            <div>
-                                <h4>International Conference</h4>
-                                <p>Successfully ran and organised the international <em>Exploring Visual Culture</em> conference, 2023</p>
-                                <a href="https://www.explore-vc.org/en/news.html" target="_blank" rel="noopener" class="achievement-link">Visit website →</a>
-                            </div>
+                        <div class="form-group">
+                            <label for="cf-subject">Subject</label>
+                            <input type="text" id="cf-subject" name="subject" placeholder="What's this about?">
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- LINKS TO WORK -->
-        <section class="section" id="work-links">
-            <div class="container">
-                <div class="section-label reveal">Portfolio</div>
-                <h2 class="section-title reveal">Links To<br><span class="accent">My Work</span></h2>
-                <div class="websites-built-grid">
-                    <a href="https://swanky-pants-janx.github.io/Shepstone-Rebuild/" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Shepstone Spa.png" alt="Shepstone Spa"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Shepstone Spa (custom rebuild)</div>
-                            <div class="website-preview-arrow">→</div>
+                        <div class="form-group">
+                            <label for="cf-message">Message</label>
+                            <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
                         </div>
-                    </a>
-                    <a href="https://www.shepstonespa.co.za/" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Shepstone Spa.png" alt="Shepstone Spa"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Shepstone Spa</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
-                    <a href="https://www.knee.capetown/" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Knee.png" alt="Knee Cape Town"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Knee Cape Town</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
-                    <a href="https://strideortho.co.za/" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Stride.png" alt="Stride"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Stride</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
-                    <a href="https://www.carfox.co.za/" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Carfox.png" alt="Carfox"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Carfox</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
-                    <a href="https://www.jo-annstrauss.com/" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Jo-Ann.png" alt="Jo-Ann Strauss"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Jo-Ann Strauss</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
-                    <a href="https://www.masekhaya.co.za/" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Masekaya.png" alt="Masekhaya"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Masekhaya</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
-                    <a href="https://hare-curated-website-build.vercel.app" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Hare Curated.png" alt="Hare Curated"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Hare Curated (custom rebuild)</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
-                    <a href="https://tapxdev.wixstudio.com/salgados" target="_blank" rel="noopener" class="website-preview-card reveal">
-                        <div class="website-preview-img"><img src="Screenshots/Salgados Website.png" alt="Salgados Website"></div>
-                        <div class="website-preview-body">
-                            <div class="website-preview-name">Salgados Website</div>
-                            <div class="website-preview-arrow">→</div>
-                        </div>
-                    </a>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <p class="form-note" id="form-success" style="display:none;">Message sent! I'll get back to you soon.</p>
+                    </form>
+
                 </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- PICAMARKET -->
-        <section class="section section-dark" id="picamarket">
-            <div class="container">
-                <div class="section-label reveal">Personal Projects</div>
-                <h2 class="section-title reveal">Pica<span class="accent">Market</span></h2>
-
-                <p class="section-subtitle reveal">PicaMarket is a personal project born from a real problem. Watching friends manage markets through spreadsheets and endless back-and-forth emails. I built it to automate the entire process, from vendor applications to approvals, all in one place.</p>
-
-                <div class="pica-hero reveal">
-                    <img src="PicaMarketLogo.png" alt="PicaMarket Logo" class="pica-logo">
-                    <p class="pica-tagline">Run your market. Grow your stall.</p>
-                    <p class="pica-desc">PicaMarket connects market organisers and vendors on one platform, making applications, approvals, and management effortless.</p>
-                    <a href="https://picamarket.site" target="_blank" rel="noopener" class="btn btn-primary">Visit Picamarket →</a>
-                </div>
-
-                <div class="pica-paths reveal">
-                    <div class="pica-path-card">
-                        <div class="pica-path-title">Market Organiser</div>
-                        <p class="pica-path-desc">Everything you need to run a successful market, from vendor applications to stall layouts and day-of logistics.</p>
-                        <ul class="pica-list">
-                            <li>Manage vendors and applications</li>
-                            <li>Build custom application forms</li>
-                            <li>Track payments and approvals</li>
-                            <li>Share a public market profile</li>
-                        </ul>
-                    </div>
-                    <div class="pica-path-card">
-                        <div class="pica-path-title">Vendor</div>
-                        <p class="pica-path-desc">Discover markets, apply for stall space, and manage your vendor profile all in one place.</p>
-                        <ul class="pica-list">
-                            <li>Browse the market directory</li>
-                            <li>Apply to markets with saved profile</li>
-                            <li>Track your application status</li>
-                            <li>Get notified on approvals</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="pica-features reveal">
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Custom Applications</div>
-                        <p>Build tailored vendor application forms with your own fields and questions.</p>
-                    </div>
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Market Calendar</div>
-                        <p>Schedule recurring markets and let vendors see upcoming dates at a glance.</p>
-                    </div>
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Public Profiles</div>
-                        <p>Share a public page for your market so vendors and shoppers can find you easily.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- TEXT GAME -->
-        <section class="section" id="text-game">
-            <div class="container">
-                <div class="section-label reveal">Personal Projects</div>
-                <h2 class="section-title reveal">Text-Based <span class="accent">Adventure</span></h2>
-
-                <p class="section-subtitle reveal">A fun side project built entirely for the love of it. Explore dungeons and wilderness, battle enemies, and collect loot — with survival mechanics like hunger and dynamic weather keeping every run unpredictable. Fast-paced, browser-based, and endlessly replayable.</p>
-
-                <div class="pica-hero reveal">
-                    <p class="pica-tagline">Explore. Survive. Conquer.</p>
-                    <p class="pica-desc">A text adventure game that runs right in your browser. Every decision counts. Manage your health, hunger, and gear as you push deeper into the unknown.</p>
-                    <a href="https://swanky-pants-janx.github.io/Text-Based-Game-v2/" target="_blank" rel="noopener" class="btn btn-primary">Play the Game →</a>
-                </div>
-
-                <div class="pica-features reveal">
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Dungeon Exploration</div>
-                        <p>Venture into procedurally structured dungeons and wilderness areas packed with enemies and loot.</p>
-                    </div>
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Survival Mechanics</div>
-                        <p>Manage hunger, health, and resources while adapting to dynamic weather that changes the challenge.</p>
-                    </div>
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Combat &amp; Loot</div>
-                        <p>Fight enemies, collect gear, and build your character through fast-paced text-driven combat.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WEB CANVAS -->
-        <section class="section section-dark" id="web-canvas">
-            <div class="container">
-                <div class="section-label reveal">Personal Projects</div>
-                <h2 class="section-title reveal">Web <span class="accent">Canvas</span></h2>
-
-                <p class="section-subtitle reveal">Web Canvas is a lightweight web app inspired by Mira and Figma, built to help you manage assets and content for building websites. Use it as an idea board or keep everything for a project in one place — all from your browser.</p>
-
-                <div class="pica-hero reveal">
-                    <p class="pica-tagline">Plan. Organise. Build.</p>
-                    <p class="pica-desc">Create multiple project folders, each with their own content. Add paragraphs, headers, to-do lists, images, and videos — everything you need to go from idea to finished site, in one place.</p>
-                    <a href="https://web-canvas-app.vercel.app/projects.html" target="_blank" rel="noopener" class="btn btn-primary">Visit Web Canvas →</a>
-                </div>
-
-                <div class="pica-features reveal">
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Project Folders</div>
-                        <p>Create separate folders for each project and keep all your assets, notes, and content neatly organised.</p>
-                    </div>
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Rich Content Blocks</div>
-                        <p>Add paragraphs, headers, to-do lists, images, and videos to build out your ideas exactly how you want them.</p>
-                    </div>
-                    <div class="pica-feature">
-                        <div class="pica-feature-title">Idea Board</div>
-                        <p>Use it as a visual scratchpad to collect references, plan layouts, and keep inspiration close while you build.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- OTHER -->
-        <section class="section section-dark" id="other">
-            <div class="container">
-                <div class="section-label reveal">Portfolio</div>
-                <h2 class="section-title reveal"><span class="accent">Other</span></h2>
-                <div class="portfolio-grid">
-                    <div class="portfolio-card reveal portfolio-card-videos" tabindex="0">
-                        <div class="portfolio-icon"><img src="Icons/media.svg" alt="Videos"></div>
-                        <span>Videos</span>
-                        <div class="portfolio-arrow">→</div>
-                        <div class="video-dropdown">
-                            <a href="https://youtu.be/796mc2_J404" target="_blank" rel="noopener">Video 1 ↗</a>
-                            <a href="https://youtu.be/eyeP1G7rhSU" target="_blank" rel="noopener">Video 2 ↗</a>
-                            <a href="https://youtu.be/DTUKZtsOqKA" target="_blank" rel="noopener">Video 3 ↗</a>
-                        </div>
-                    </div>
-                </div>
-                <div style="text-align:center; margin-top: 56px;">
-                    <a href="#hero" class="btn btn-ghost">↑ To the Top</a>
-                </div>
-            </div>
-        </section>
+            </div><!-- /page-content -->
+        </div><!-- /page-grid -->
 
     </main>
 
-    <!-- FOOTER / CONTACT -->
-    <footer id="contact">
-        <div class="container">
-            <div class="footer-grid reveal">
-                <div class="footer-left">
-                    <div class="footer-logo">JU</div>
-                    <p class="footer-tagline">Let's build something great together.</p>
-                    <div class="footer-contact-list" id="footerContactList">
-                        <a href="mailto:jancouyscareer@gmail.com">jancouyscareer@gmail.com</a>
-                        <a href="tel:+27769060900">+(27) 76 906 0900</a>
-                        <span>Pretoria, South Africa</span>
-                    </div>
-                </div>
-                <div class="footer-right">
-                    <h3>References</h3>
-                    <div class="ref-item">
-                        <strong>Prof Jenni Lauwrens</strong>
-                        <span>University of Pretoria</span>
-                        <a href="mailto:jenni.lauwrens@up.ac.za">jenni.lauwrens@up.ac.za</a>
-                    </div>
-                    <div class="ref-item">
-                        <strong>Gabrielle Onay</strong>
-                        <span>Picnic &amp; Thrift</span>
-                        <a href="tel:+27714693897">+27 71 469 3897</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© 2026 Janco Uys. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- FOOTER -->
 
     <script>
-        // Sidebar active section tracking
-        const sidenav = document.getElementById('sidenav');
-        const sidenavLinks = document.querySelectorAll('.sidenav-link');
-        const sections = document.querySelectorAll('section[id], footer[id]');
+        // --- Sidebar anchor nav + scroll spy ---
+        (function () {
+            const container = document.querySelector('.bottom-menu-container');
+            if (!container) return;
+            const links = Array.from(container.querySelectorAll('a[href^="#"]'));
+            const pill = document.createElement('span');
+            pill.className = 'tab-pill';
+            container.insertBefore(pill, container.firstChild);
 
-        const heroEl = document.getElementById('hero');
-        const heroVisibility = new IntersectionObserver((entries) => {
-            sidenav.classList.toggle('sidenav-hidden', entries[0].isIntersecting);
-        }, { threshold: 0.1 });
-        heroVisibility.observe(heroEl);
+            function setActive(link, animate) {
+                links.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                if (!animate) pill.classList.add('no-transition');
+                pill.style.top    = link.offsetTop + 'px';
+                pill.style.height = link.offsetHeight + 'px';
+                if (!animate) { pill.getBoundingClientRect(); pill.classList.remove('no-transition'); }
+            }
 
-        function updateActiveLink() {
-            const mid = window.innerHeight / 2;
-            let closest = null;
-            let closestDist = Infinity;
-            sections.forEach(s => {
-                const rect = s.getBoundingClientRect();
-                const dist = Math.abs(rect.top + rect.height / 2 - mid);
-                if (dist < closestDist) { closestDist = dist; closest = s; }
+            // Init on first active link
+            const first = container.querySelector('a.active') || links[0];
+            setActive(first, false);
+
+            // Click: smooth scroll
+            links.forEach(link => {
+                link.addEventListener('click', e => {
+                    e.preventDefault();
+                    const target = document.querySelector(link.getAttribute('href'));
+                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    setActive(link, true);
+                });
             });
-            if (closest) {
-                sidenavLinks.forEach(link => {
-                    link.classList.toggle('active', link.dataset.section === closest.id);
+
+            // Scroll spy via IntersectionObserver
+            const sections = links
+                .map(l => document.querySelector(l.getAttribute('href')))
+                .filter(Boolean);
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const link = links.find(l => l.getAttribute('href') === '#' + entry.target.id);
+                        if (link) setActive(link, true);
+                    }
+                });
+            }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+            sections.forEach(s => observer.observe(s));
+        })();
+
+        // --- Footer year ---
+
+        // --- 3D Carousel ---
+        (function () {
+            const wrapper = document.querySelector('.carousel-3d-wrapper');
+            if (!wrapper) return;
+            const slides = Array.from(wrapper.querySelectorAll('.carousel-slide'));
+            const dotsEl = wrapper.closest('#websites').querySelector('.carousel-dots');
+            const total = slides.length;
+            let current = 0;
+
+            // Build dots
+            slides.forEach((_, i) => {
+                const d = document.createElement('button');
+                d.className = 'carousel-dot';
+                d.setAttribute('aria-label', 'Slide ' + (i + 1));
+                d.addEventListener('click', () => goTo(i));
+                dotsEl.appendChild(d);
+            });
+
+            function goTo(index) {
+                current = (index + total) % total;
+                update();
+            }
+
+            function update() {
+                slides.forEach((slide, i) => {
+                    const offset = ((i - current + total) % total);
+                    const mirrored = offset > total / 2 ? offset - total : offset;
+                    slide.dataset.pos = mirrored;
+
+                    const abs = Math.abs(mirrored);
+                    // Only active + immediate neighbours are visible; rest hidden
+                    slide.style.opacity      = abs === 0 ? '1' : abs === 1 ? '0.52' : '0';
+                    slide.style.pointerEvents= abs === 0 ? 'auto' : 'none';
+                    slide.style.zIndex       = abs === 0 ? '3' : abs === 1 ? '2' : '1';
+
+                    // Neighbours shifted just enough to peek from behind the active card
+                    const tx  = mirrored * 46;        // % — closer = more peeking
+                    const tz  = abs === 0 ? 0 : -220; // px depth push
+                    const ry  = mirrored * -22;        // deg rotation away
+                    const sc  = abs === 0 ? 1 : 0.80;
+                    slide.style.transform = `translateX(${tx}%) translateZ(${tz}px) rotateY(${ry}deg) scale(${sc})`;
+                });
+
+                dotsEl.querySelectorAll('.carousel-dot').forEach((d, i) => {
+                    d.classList.toggle('active', i === current);
                 });
             }
-        }
-        window.addEventListener('scroll', updateActiveLink, { passive: true });
-        updateActiveLink();
 
-        // Contact highlight on nav click
-        const footerContactList = document.getElementById('footerContactList');
-        document.querySelectorAll('a[href="#contact"]').forEach(link => {
-            link.addEventListener('click', () => {
-                footerContactList.classList.remove('contact-highlight');
-                void footerContactList.offsetWidth; // force reflow to restart animation
-                footerContactList.classList.add('contact-highlight');
-                footerContactList.addEventListener('animationend', () => {
-                    footerContactList.classList.remove('contact-highlight');
-                }, { once: true });
+            wrapper.querySelector('.carousel-prev').addEventListener('click', () => goTo(current - 1));
+            wrapper.querySelector('.carousel-next').addEventListener('click', () => goTo(current + 1));
+
+            // Keyboard navigation
+            wrapper.setAttribute('tabindex', '0');
+            wrapper.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft')  goTo(current - 1);
+                if (e.key === 'ArrowRight') goTo(current + 1);
             });
-        });
 
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
-        window.addEventListener('scroll', () => {
-            navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-
-        // Hamburger menu
-        const hamburger = document.getElementById('hamburger');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('open');
-            mobileMenu.classList.toggle('open');
-        });
-        document.querySelectorAll('.mobile-link').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('open');
-                mobileMenu.classList.remove('open');
+            // Touch / swipe
+            let touchStartX = 0;
+            wrapper.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            wrapper.addEventListener('touchend',   e => {
+                const dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 40) goTo(current + (dx < 0 ? 1 : -1));
             });
-        });
 
-        // Typewriter effect
-        const phrases = [
-            'Web Developer.',
-            'Web Designer.',
-            'Content Creator.',
-            'Quality Focused.',
-            'Digital Specialist.'
-        ];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let deleting = false;
-        const typewriterEl = document.getElementById('typewriter');
+            // Trackpad horizontal scroll / horizontal scroll wheel
+            let scrollCooldown = false;
+            wrapper.addEventListener('wheel', e => {
+                const dx = Math.abs(e.deltaX);
+                const dy = Math.abs(e.deltaY);
+                if (dx < 10 && dy < 10) return;       // no meaningful movement
+                if (dy > dx * 2) return;               // mostly vertical — let page scroll
+                e.preventDefault();
+                if (scrollCooldown) return;
+                scrollCooldown = true;
+                goTo(current + (e.deltaX > 0 ? 1 : -1));
+                setTimeout(() => { scrollCooldown = false; }, 500);
+            }, { passive: false });
 
-        function type() {
-            const current = phrases[phraseIndex];
-            if (deleting) {
-                charIndex--;
-                typewriterEl.textContent = current.slice(0, charIndex);
-                if (charIndex === 0) {
-                    deleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    setTimeout(type, 400);
-                    return;
-                }
-            } else {
-                charIndex++;
-                typewriterEl.textContent = current.slice(0, charIndex);
-                if (charIndex === current.length) {
-                    deleting = true;
-                    setTimeout(type, 1800);
-                    return;
-                }
-            }
-            setTimeout(type, deleting ? 60 : 90);
-        }
-        type();
+            update();
+        })();
 
-        // Scroll reveal
-        const revealEls = document.querySelectorAll('.reveal');
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
+// --- Scroll reveal ---
+        (function () {
+            const els = document.querySelectorAll('.reveal');
+            const obs = new IntersectionObserver(entries => {
+                entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+            }, { threshold: 0.08 });
+            els.forEach(el => obs.observe(el));
+        })();
+
+        // --- Hero image tilt ---
+        (function () {
+            const wrap = document.querySelector('.hero-image-wrap');
+            if (!wrap) return;
+            const MAX = 14;
+            wrap.addEventListener('mousemove', e => {
+                const { left, top, width, height } = wrap.getBoundingClientRect();
+                const x = (e.clientX - left) / width  - 0.5;
+                const y = (e.clientY - top)  / height - 0.5;
+                wrap.style.transform = `perspective(700px) rotateY(${x * MAX}deg) rotateX(${-y * MAX}deg) scale(1.03)`;
+                wrap.style.boxShadow = `${-x * 18}px ${y * 18}px 40px rgba(230,144,43,0.25)`;
             });
-        }, { threshold: 0.12 });
-        revealEls.forEach(el => revealObserver.observe(el));
-
-        // Video card dropdown toggle
-        const videoCard = document.querySelector('.portfolio-card-videos');
-        videoCard.addEventListener('click', (e) => {
-            // Don't close when clicking an inner link
-            if (e.target.tagName === 'A') return;
-            videoCard.classList.toggle('open');
-        });
-        // Close when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!videoCard.contains(e.target)) videoCard.classList.remove('open');
-        });
-
-        // Skill card tilt on hover
-        document.querySelectorAll('.skill-card').forEach(card => {
-            card.addEventListener('mousemove', e => {
-                const rect = card.getBoundingClientRect();
-                const x = ((e.clientX - rect.left) / rect.width - 0.5) * 12;
-                const y = ((e.clientY - rect.top) / rect.height - 0.5) * -12;
-                card.style.transform = `perspective(600px) rotateX(${y}deg) rotateY(${x}deg) translateY(-4px)`;
+            wrap.addEventListener('mouseleave', () => {
+                wrap.style.transform = '';
+                wrap.style.boxShadow = '';
             });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = '';
-            });
-        });
+        })();
 
+        // --- Contact form ---
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
