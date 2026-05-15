@@ -429,6 +429,29 @@
                 </div>
                 <div class="contact-layout">
 
+                    <form class="contact-form" action="https://formspree.io/f/xaqvzvdg" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="cf-name">Name</label>
+                                <input type="text" id="cf-name" name="name" placeholder="Your name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="cf-email">Email</label>
+                                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-subject">Subject</label>
+                            <input type="text" id="cf-subject" name="subject" placeholder="What's this about?">
+                        </div>
+                        <div class="form-group">
+                            <label for="cf-message">Message</label>
+                            <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                        <p class="form-note" id="form-success" style="display:none;">Message sent! I'll get back to you soon.</p>
+                    </form>
+
                     <div class="contact-info">
                         <div class="contact-block">
                             <span class="contact-label">Email</span>
@@ -463,29 +486,6 @@
                             </div>
                         </div>
                     </div>
-
-                    <form class="contact-form" action="https://formspree.io/f/xaqvzvdg" method="POST">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="cf-name">Name</label>
-                                <input type="text" id="cf-name" name="name" placeholder="Your name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="cf-email">Email</label>
-                                <input type="email" id="cf-email" name="email" placeholder="your@email.com" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="cf-subject">Subject</label>
-                            <input type="text" id="cf-subject" name="subject" placeholder="What's this about?">
-                        </div>
-                        <div class="form-group">
-                            <label for="cf-message">Message</label>
-                            <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                        <p class="form-note" id="form-success" style="display:none;">Message sent! I'll get back to you soon.</p>
-                    </form>
 
                 </div>
             </section>
