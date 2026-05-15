@@ -1483,7 +1483,7 @@ a.contact-value:hover {
         flex-wrap: nowrap;
         overflow-x: auto;
         width: 100%;
-        border-radius: 16px;
+        border-radius: 9999px;
         min-width: unset;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
@@ -1491,6 +1491,12 @@ a.contact-value:hover {
 
     .bottom-menu-container::-webkit-scrollbar {
         display: none;
+    }
+
+    .bottom-menu-container a {
+        flex: 1;
+        text-align: center;
+        padding: 11px 8px;
     }
 
     .bottom-menu-container a.active {

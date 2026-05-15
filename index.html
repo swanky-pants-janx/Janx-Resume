@@ -26,8 +26,8 @@
     <meta name="twitter:image" content="https://jancouysportfolio.site/IMG_2696.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="Icons 2/html5-02-svgrepo-com.svg">
-    <link rel="shortcut icon" href="Icons 2/html5-02-svgrepo-com.svg">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="shortcut icon" href="favicon.svg">
 
     <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
@@ -520,31 +520,48 @@
             const first = container.querySelector('a.active') || links[0];
             setActive(first, false);
 
-            // Click: smooth scroll
+            // Click: smooth scroll (offset for sticky nav on mobile)
             links.forEach(link => {
                 link.addEventListener('click', e => {
                     e.preventDefault();
                     const target = document.querySelector(link.getAttribute('href'));
-                    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    if (target) {
+                        const sidebar = document.querySelector('.page-sidebar');
+                        const sidebarOffset = (sidebar && getComputedStyle(sidebar).position === 'sticky')
+                            ? sidebar.offsetHeight
+                            : 0;
+                        const top = target.getBoundingClientRect().top + window.scrollY - sidebarOffset - 8;
+                        window.scrollTo({ top, behavior: 'smooth' });
+                    }
                     setActive(link, true);
                 });
             });
 
-            // Scroll spy via IntersectionObserver
+            // Scroll spy — uses scroll position to pick whichever section's top
+            // is closest above the 30% viewport mark, falling back to the last
+            // section when near the bottom of the page.
             const sections = links
                 .map(l => document.querySelector(l.getAttribute('href')))
                 .filter(Boolean);
 
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const link = links.find(l => l.getAttribute('href') === '#' + entry.target.id);
-                        if (link) setActive(link, true);
-                    }
-                });
-            }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+            function updateActiveFromScroll() {
+                const threshold = window.innerHeight * 0.35;
+                const atBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 8;
+                if (atBottom) {
+                    setActive(links[links.length - 1], true);
+                    return;
+                }
+                let best = sections[0];
+                for (const s of sections) {
+                    const top = s.getBoundingClientRect().top;
+                    if (top <= threshold) best = s;
+                }
+                const link = links.find(l => l.getAttribute('href') === '#' + best.id);
+                if (link) setActive(link, true);
+            }
 
-            sections.forEach(s => observer.observe(s));
+            window.addEventListener('scroll', updateActiveFromScroll, { passive: true });
+            updateActiveFromScroll();
         })();
 
         // --- Footer year ---
